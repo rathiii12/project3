@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Calculator
+{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+
+    <label>First Number:</label><br>
+    <input type="number" name="num1" required><br><br>
+
+    <label>Second Number:</label><br>
+    <input type="number" name="num2" required><br><br>
+
+    <label>Operation:</label><br>
+
+    <select name="operation">
+        <option value="+">Addition</option>
+        <option value="-">Subtraction</option>
+        <option value="*">Multiplication</option>
+        <option value="/">Division</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Calculate</button>
+
+</form>
+
+{% if result is not none %}
+    <h2>Result = {{ result }}</h2>
+{% endif %}
+
+{% endblock %}
